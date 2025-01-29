@@ -6,6 +6,25 @@
 ```bash
 free [OPTION]
 ```
+```bash
+harekrushn@harekrushn-ThinkPad-T14s-Gen-1:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:       15991316     3254912     8949120      588888     3787284    11583300
+Swap:       2097148           0     2097148
+```
+
+## Summary
+1. Memory (RAM) Section:
+    - total: Total installed memory (RAM).
+    - used: Memory currently in use.
+    - free: Unused memory.
+    - shared: Memory used by tmpfs (temporary file systems).
+    - buff/cache: Memory used by buffers and cache (can be freed if needed).
+    - available: Estimate of memory available for starting new applications without swapping.
+2. Swap Section:
+    - total: Total swap space.
+    - used: Swap space currently in use.
+    - free: Unused swap space.
 
 ## Options
 |Options	| Description|
@@ -24,12 +43,6 @@ free [OPTION]
 |-V, –version	 | Displays version information and exits.|
 
 ## Output
-```bash
-harekrushn@harekrushn-ThinkPad-T14s-Gen-1:~$ free
-              total        used        free      shared  buff/cache   available
-Mem:       15991316     3254912     8949120      588888     3787284    11583300
-Swap:       2097148           0     2097148
-```
 ```bash
 harekrushn@harekrushn-ThinkPad-T14s-Gen-1:~$ free -h
               total        used        free      shared  buff/cache   available

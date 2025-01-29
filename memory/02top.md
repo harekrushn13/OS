@@ -90,3 +90,10 @@ MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  10541.4 avail Mem
     - %CPU  --  CPU Usage
     - %MEM  --  Memory Usage (RES)
     - COMMAND: The name of the command that started the process.
+
+## Command-Line Options
+- -d delay: Set the delay between updates in seconds (e.g., top -d 2 for a 2-second delay).
+- -n iterations: Limit top to a specific number of iterations before exiting (e.g., top -n 5).
+- -p PID: Monitor only the specified process ID(s) (e.g., top -p 1234).
+- -u username: Show only processes owned by the specified user (e.g., top -u root).
+- -b: Run top in batch mode, useful for redirecting output to a file (e.g., top -b > top_output.txt)
