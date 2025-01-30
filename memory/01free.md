@@ -13,7 +13,9 @@ Mem:       15991316     3254912     8949120      588888     3787284    11583300
 Swap:       2097148           0     2097148
 ```
 
-## Summary
+total = used + free + buffer + cache
+
+## Summary 
 1. Memory (RAM) Section:
     - total: Total installed memory (RAM).
     - used: Memory currently in use.

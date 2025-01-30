@@ -7,7 +7,7 @@ harekrushn@harekrushn-ThinkPad-T14s-Gen-1:~$ top
 
 top - 21:54:42 up 31 min,  1 user,  load average: 0.68, 0.88, 0.78
 Tasks: 343 total,   1 running, 342 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  1.5 us,  0.8 sy,  0.0 ni, 97.3 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu(s):  1.5 us,  0.8 sy,  0.0 ni, 97.3 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st 
 MiB Mem :  15616.5 total,   7494.1 free,   3898.9 used,   4223.5 buff/cache
 MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  10541.4 avail Mem 
 
@@ -97,3 +97,36 @@ MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  10541.4 avail Mem
 - -p PID: Monitor only the specified process ID(s) (e.g., top -p 1234).
 - -u username: Show only processes owned by the specified user (e.g., top -u root).
 - -b: Run top in batch mode, useful for redirecting output to a file (e.g., top -b > top_output.txt)
+
+---
+
+## **What is Load Average?**
+- Load average represents the **average system load** over 1, 5, and 15 minutes.
+- It measures the number of processes either:
+  - Actively using the CPU (**running**),
+  - Waiting for CPU time (**runnable**),
+  - Or stuck in **uninterruptible states** (e.g., waiting for disk I/O, network, etc.).
+
+## **When Should You Watch Load Average?**
+1. **High Load Relative to CPU Cores**:
+   - If the load average exceeds the number of CPU cores (e.g., load of `8` on a 4-core CPU), your system is **overloaded**.
+   - Example: A load of `4.0` on a 4-core CPU means all cores are fully utilized.
+
+2. **Spikes in the 1-minute Average**:
+   - A sudden spike in the 1-minute load (e.g., `15.0`) while the 15-minute average is low (e.g., `1.2`) indicates a **short-term workload** (e.g., a script or process hogging resources).
+
+3. **Consistently High Load**:
+   - If all three values (1m, 5m, 15m) are high, your system is **chronically overloaded**. This leads to slowdowns, unresponsiveness, or crashes.
+
+4. **Unexpected Process Behavior**:
+   - If your system feels slow, but CPU/memory usage appears normal, check load average. High load could mean processes are stuck waiting for I/O (e.g., disk or network).
+
+5. **Disk/Network Bottlenecks**:
+   - High load with low CPU usage often points to **I/O waits** (e.g., a database waiting for disk access, or a process stuck in `D` state in `top`).
+
+---
+
+- For the particular process virtual address mapping
+```bash
+cat /proc/<pid>/maps
+```
