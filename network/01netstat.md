@@ -179,17 +179,3 @@ udp        0      0 0.0.0.0:123             0.0.0.0:*
 - `State`: The state of the connection (e.g., `LISTEN`, `ESTABLISHED`).
 
 ---
-
-## Deprecation Notice
-On some modern Linux distributions, `netstat` is considered deprecated in favor of the `ss` command (from the `iproute2` package). However, `netstat` is still widely used and available.
-
----
-
-## Conclusion
-The `netstat` command is a versatile tool for monitoring and troubleshooting network connections. It is particularly useful for:
-- Identifying open ports.
-- Checking active connections.
-- Diagnosing network issues.
-- Monitoring network statistics.
-
-For more advanced usage, refer to the `man netstat` or `netstat --help` command. Let me know if you need further assistance!
